@@ -8,7 +8,7 @@
 
 <ul>
     @foreach($books as $b)
-        <li>{{ $b }}</li>
+        <li>{{ $b->isbn . ": " . $b->title }}</li>
     @endforeach
 </ul>
 </body>
