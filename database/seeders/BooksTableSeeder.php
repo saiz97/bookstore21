@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use DateTime;
 
+use App\Models\Book;
+
 class BooksTableSeeder extends Seeder
 {
     /**
@@ -16,7 +18,7 @@ class BooksTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('books')->insert([
+        /* DB::table('books')->insert([
             'title' => 'Hobbit',
             'isbn' => '4777237677',
             'subtitle' => Str::random(100),
@@ -25,6 +27,18 @@ class BooksTableSeeder extends Seeder
             'published' => new DateTime(),
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
-        ]);
+        ]); */
+
+        // über ORmapper
+        // php artisan db:seed
+        $book = new Book();
+        $book->title = 'Herr der Ringe 2';
+        $book->isbn = '357788888';
+        $book->subtitle = 'asfgg';
+        $book->rating = 10;
+        $book->description = 'Fhghgh';
+        $book->published = new DateTime();
+        $book->save(); // anlegen + update (or mapper checkt, ob Buch existiert oder nicht)
+        // für delete: $book->delete()
     }
 }
