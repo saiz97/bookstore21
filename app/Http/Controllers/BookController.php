@@ -9,8 +9,10 @@ class BookController extends Controller
 {
     public function index () {
         // $books = DB::table('books')->get();
-        $books = Book::all();
-        return view('books.index', compact('books'));
+        $books = Book::with(['authors', 'images', 'user'])->get();
+
+        // return view('books.index', compact('books')); // wenn über web.php aufgerufen
+        return $books;
     }
 
     public function show ($book) {
