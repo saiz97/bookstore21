@@ -38,6 +38,11 @@ class BooksTableSeeder extends Seeder
         $book->rating = 10;
         $book->description = 'Fhghgh';
         $book->published = new DateTime();
+
+        // first user
+        $user = \App\Models\User::all()->first();
+        $book->user()->associate($user);
+
         $book->save(); // anlegen + update (or mapper checkt, ob Buch existiert oder nicht)
         // für delete: $book->delete()
 
