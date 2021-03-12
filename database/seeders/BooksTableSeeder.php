@@ -31,7 +31,7 @@ class BooksTableSeeder extends Seeder
 
         // über ORmapper
         // php artisan db:seed
-        $book = new Book();
+        $book = new Book;
         $book->title = 'Herr der Ringe 2';
         $book->isbn = '357788888';
         $book->subtitle = 'asfgg';
@@ -40,5 +40,16 @@ class BooksTableSeeder extends Seeder
         $book->published = new DateTime();
         $book->save(); // anlegen + update (or mapper checkt, ob Buch existiert oder nicht)
         // für delete: $book->delete()
+
+        $image1 = new \App\Models\Image;
+        $image1->title = 'Bild 1';
+        $image1->url = 'https://images.unsplash.com/photo-1535666669445-e8c15cd2e7d9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bG9yZCUyMG9mJTIwcmluZ3N8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60';
+
+        $image2 = new \App\Models\Image;
+        $image2->title = 'Bild 2';
+        $image2->url = 'https://images.unsplash.com/photo-1577453193951-ae7a761e70eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
+
+        $book->images()->saveMany([$image1, $image2]);
+        $book->save();
     }
 }
