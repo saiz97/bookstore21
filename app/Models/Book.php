@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Book extends Model
 {
@@ -17,6 +18,14 @@ class Book extends Model
 
     public function isFavorite() :bool {
         return ($this->rating >= 8);
+    }
+
+    /**
+     * 1-n relation
+     * book has many images
+     */
+    public function images() : HasMany {
+        return $this->hasMany(Image::class);
     }
 
 }
