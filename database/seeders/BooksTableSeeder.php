@@ -55,6 +55,11 @@ class BooksTableSeeder extends Seeder
         $image2->url = 'https://images.unsplash.com/photo-1577453193951-ae7a761e70eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
 
         $book->images()->saveMany([$image1, $image2]);
+
+        // test authors
+        $authors = \App\Models\Author::all()->pluck('id');
+        $book->authors()->sync($authors);
+
         $book->save();
     }
 }
