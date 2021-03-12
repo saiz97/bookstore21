@@ -12,9 +12,11 @@ class Book extends Model
     // wird auf books gemappt (von ORmapper)
     // protected $table = 'buecher';
 
+    // must assignments = fillables
     protected $fillable = ['isbn', 'title', 'subtitle', 'published', 'rating', 'description', 'user_id'];
 
     public function isFavorite() :bool {
         return ($this->rating >= 8);
     }
+
 }
