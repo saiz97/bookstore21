@@ -15,14 +15,8 @@ use App\Models\Book;
 |
 */
 
-Route::get('/', function () {
-    // $books = DB::table('books')->get();
-    $books = Book::all();
-    return view('books.index', compact('books'));
-});
+Route::get('/', [\App\Http\Controllers\BookController::class, 'index']);
 
-Route::get('/books/{id}', function ($id) {
-    // $book = DB::table('books')->find($id);
-    $book = Book::find($id);
-    return view('books.show', compact('book'));
-});
+Route::get('/books', [\App\Http\Controllers\BookController::class, 'index']);
+
+Route::get('/books/{book}', [\App\Http\Controllers\BookController::class, 'show']);
