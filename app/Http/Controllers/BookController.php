@@ -82,6 +82,60 @@ class BookController extends Controller
         }
     }
 
+    public function update (Request $request, string $isbn) : JsonResponse {
+        DB::beginTransaction();
+        try {
+            $book = Book::with(['authors', 'images', 'user'])->where('isbn', $isbn)->first();
+
+            if ($book != null) {
+                $request = $this->parseRequest($request);
+                $book->update($request->all());
+
+                $book->images()->delete();
+
+                // update images
+                if (isset($request['images']) && is_array($request['images'])) {
+                    foreach ($request['images'] as $img) {
+                        $image = Image::firstOrNew(['url' => $img['url'], 'title' => $img['title']]);
+                        $book->images()->save($image);
+                    }
+                }
+
+                // update authors
+                $ids = [];
+                if (isset($request['authors']) && is_array($request['authors'])) {
+                    foreach ($request['authors'] as $auth) {
+                        array_push($ids, $auth['id']);
+                    }
+                }
+
+                $book->authors()->sync($ids);
+                $book->save();
+            }
+
+            DB::commit();
+            $book1 = Book::with(['authors', 'images', 'user'])->get();
+            return response()->json($book1, 201);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json("updating book failed: " . $e->getMessage(), 420);
+        }
+    }
+
+    public function delete (string $isbn) : JsonResponse {
+        $book = Book::where('isbn', $isbn)->first();
+
+        if ($book != null) {
+            $book->delete();
+        } else {
+            throw new \Exception("Book doesn't exist.");
+            // return response()->json("Book doesn't exist.", 200);
+        }
+
+        return response()->json("Book with isbn=". $isbn . " deleted, successfully.", 201);
+    }
+
     /**
      * modify / convert values if needed
      */

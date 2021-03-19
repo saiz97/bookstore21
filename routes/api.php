@@ -25,3 +25,9 @@ Route::get('/books/search/{searchTerm}', [\App\Http\Controllers\BookController::
 
 /* save book uses VERB post */
 Route::post('book', [\App\Http\Controllers\BookController::class, 'save']);
+
+/* update book uses VERB put */
+Route::put('book/{isbn}', [\App\Http\Controllers\BookController::class, 'update']);
+
+/* delete book uses VERB delete */
+Route::delete('book/{isbn}', [\App\Http\Controllers\BookController::class, 'delete']);
