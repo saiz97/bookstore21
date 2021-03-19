@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\Image;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -33,7 +37,7 @@ class BookController extends Controller
                     : response()->json(false, 200);
     }
 
-    public function findBySearchTerm(string $searchTerm) {
+    public function findBySearchTerm (string $searchTerm) {
         $books = Book::with(['authors', 'images', 'user'])
             ->where ('title', 'LIKE', '%' . $searchTerm .'%')
             ->orWhere ('subtitle' , 'LIKE', '%' . $searchTerm .'%')
@@ -44,5 +48,47 @@ class BookController extends Controller
                     ->orWhere('lastName', 'LIKE', '%' . $searchTerm .'%');
             })->get();
         return $books;
+    }
+
+    public function save (Request $request) : JsonResponse {
+        $request = $this->parseRequest($request);
+
+        DB::beginTransaction();
+        try {
+            $book = Book::create($request->all());
+
+            // save images
+            if (isset($request['images']) && is_array($request['images'])) {
+                foreach ($request['images'] as $img) {
+                    $image = Image::firstOrNew(['url' => $img['url'], 'title' => $img['title']]);
+                    $book->images()->save($image);
+                }
+            }
+
+            // save authors
+            if (isset($request['authors']) && is_array($request['authors'])) {
+                foreach ($request['authors'] as $auth) {
+                    $author = Author::firstOrNew(['firstName' => $auth['firstName'], 'lastName' => $auth['lastName']]);
+                    $book->authors()->save($author);
+                }
+            }
+
+            DB::commit();
+            return response()->json($book, 201);
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json("saving book failed: " . $e->getMessage(), 420);
+        }
+    }
+
+    /**
+     * modify / convert values if needed
+     */
+    private function parseRequest(Request $request) : Request {
+        // get date and convert it - its in ISO 8601, e.g. "2018-01-01T23:00:00.000Z"
+        $date = new \DateTime($request->published);
+        $request['published'] = $date;
+        return $request;
     }
 }

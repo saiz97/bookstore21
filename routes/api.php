@@ -22,3 +22,6 @@ Route::get('/books', [\App\Http\Controllers\BookController::class, 'index']);
 Route::get('/book/{isbn}', [\App\Http\Controllers\BookController::class, 'findByISBN']);
 Route::get('/books/checkisbn/{isbn}', [\App\Http\Controllers\BookController::class, 'checkISBN']);
 Route::get('/books/search/{searchTerm}', [\App\Http\Controllers\BookController::class, 'findBySearchTerm']);
+
+/* save book uses VERB post */
+Route::post('book', [\App\Http\Controllers\BookController::class, 'save']);
