@@ -9,7 +9,6 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class BookListComponent implements OnInit {
 
-  @Output() showDetailsEvent = new EventEmitter<Book>();
   books: Book[];
 
   constructor (private bs: BookStoreService) { }
@@ -18,10 +17,6 @@ export class BookListComponent implements OnInit {
     this.books = this.bs.getAll();
 
     console.log(this.books);
-  }
-
-  showDetails(book: Book) {
-    this.showDetailsEvent.emit(book);
   }
 
 }
