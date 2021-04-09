@@ -11,7 +11,7 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookListComponent implements OnInit, OnDestroy {
 
   books: Book[];
-  bookSub: Subscription;
+  bookSub: Subscription = new Subscription();
 
   constructor (private bs: BookStoreService) { }
 
@@ -20,7 +20,7 @@ export class BookListComponent implements OnInit, OnDestroy {
       this.books = books;
     });
   }
-  
+
   ngOnDestroy(): void {
     this.bookSub.unsubscribe();
   }

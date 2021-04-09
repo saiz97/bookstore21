@@ -1,0 +1,6 @@
+<h1>Buch Formular</h1>
+
+<form [formGroup]="bookForm" class="ui large form" (ngSubmit)="submitForm()">
+
+  <button type="submit" class="ui button" [disabled]="bookForm.invalid">Speichern</button>
+</form>

@@ -12,8 +12,8 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookDetailsComponent implements OnInit, OnDestroy {
 
   book: Book;
-  bookSub: Subscription;
-  removeSub: Subscription;
+  bookSub: Subscription = new Subscription();
+  removeSub: Subscription = new Subscription();
 
   constructor(
     private route: ActivatedRoute,
