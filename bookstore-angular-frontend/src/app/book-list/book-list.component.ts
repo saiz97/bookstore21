@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Book, Image, Author } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -7,16 +8,21 @@ import { BookStoreService } from '../shared/book-store.service';
   templateUrl: './book-list.component.html',
   styleUrls: []
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
 
   books: Book[];
+  bookSub: Subscription;
 
   constructor (private bs: BookStoreService) { }
 
   ngOnInit(): void {
-    this.books = this.bs.getAll();
-
-    console.log(this.books);
+    this.bookSub = this.bs.getAll().subscribe((books) => {
+      this.books = books;
+    });
+  }
+  
+  ngOnDestroy(): void {
+    this.bookSub.unsubscribe();
   }
 
 }
