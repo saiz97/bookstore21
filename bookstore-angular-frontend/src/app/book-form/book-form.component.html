@@ -1,6 +1,63 @@
 <h1>Buch Formular</h1>
 
-<form [formGroup]="bookForm" class="ui large form" (ngSubmit)="submitForm()">
+<div class="container">
+  <form [formGroup]="bookForm" class="ui large form" (ngSubmit)="submitForm()">
 
-  <button type="submit" class="ui button" [disabled]="bookForm.invalid">Speichern</button>
-</form>
+    <input type="hidden" formControlName="id"/>
+
+    <div class="field">
+      <label for="fc_title">Buchtitel</label>
+      <input type="text" id="fc_title" formControlName="title"/>
+      <div *ngIf="errors.title" class="ui negative message">{{ errors.title }}</div>
+    </div>
+
+    <div class="field">
+      <label for="fc_subtitle">Subtitle</label>
+      <input type="text" id="fc_subtitle" formControlName="subtitle"/>
+    </div>
+
+    <div class="field" [class.disabled]="isUpdatingBook">
+      <label for="fc_isbn">ISBN</label>
+      <input type="text" id="fc_isbn" formControlName="isbn" />
+      <div *ngIf="errors.isbn" class="ui negative message">{{ errors.isbn }}</div>
+    </div>
+
+    <div class="field">
+      <label for="fc_date">Erscheinungsdatum</label>
+      <input type="date" id="fc_date" formControlName="date" />
+      <div *ngIf="errors.published" class="ui negative message">{{ errors.published }}</div>
+    </div>
+
+    <div class="field">
+      <label for="fc_description">Description</label>
+      <textarea id="fc_description" rows="3" formControlName="description"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="fc_rating">Rating</label>
+      <input type="number" id="fc_rating" formControlName="rating"/>
+      <div *ngIf="errors.rating" class="ui negative message">{{ errors.rating }}</div>
+    </div>
+
+    <div class="field">
+      <label>Thumbnails</label>
+      <div formArrayName="images">
+        <div class="fields" *ngFor="let control of images?.controls; index as i; last as l"
+          [formGroupName]="i">
+          <input type="hidden" name="id"/>
+          <div class="six wide field">
+              <input formControlName="title" placeholder="Bild{{i+1}} Titel"/>
+          </div>
+          <div class="nine wide field">
+              <input formControlName="url" placeholder="http://bild{{i+1}}_url"/>
+          </div>
+          <div class="one wide field" *ngIf="l">
+            <button (click)="addThumbnailControl()" class="ui large button" type="button">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="ui button" [disabled]="bookForm.invalid">Speichern</button>
+  </form>
+</div>
