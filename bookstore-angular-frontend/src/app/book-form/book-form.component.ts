@@ -5,6 +5,7 @@ import { BookFactory } from '../shared/book-factory';
 import { Book, Image } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 import { BookFormErrorMessages } from './book-form-error-messages';
+import { BookValidators } from '../shared/book-validators';
 
 @Component({
   selector: 'app-book-form',
@@ -51,7 +52,8 @@ export class BookFormComponent implements OnInit {
         this.book.isbn,
         [Validators.required, 
         Validators.minLength(4), 
-        Validators.maxLength(13)]
+        Validators.maxLength(13)], 
+        this.isUpdatingBook ? null : BookValidators.isbnExists(this.bookstoreSerivce)
       ],
       date: [this.book.published, Validators.required],
       description: this.book.description,
@@ -110,6 +112,8 @@ export class BookFormComponent implements OnInit {
         this.router.navigate(["../../books", book.isbn], {
           relativeTo: this.route
         });
+      }, err => {
+        console.error("Fehler occurred!", err);
       });
     } else {
       book.user_id = 1;
@@ -120,7 +124,8 @@ export class BookFormComponent implements OnInit {
         this.router.navigate(["../books"], {
           relativeTo: this.route
         });
-
+      }, err => {
+        console.error("Fehler occurred!", err);
       });
     }
   }
