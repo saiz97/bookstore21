@@ -1,0 +1,341 @@
+{
+	"id": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+	"name": "Laravel Bookstore 2021",
+	"description": "",
+	"order": [
+		"ce6ab90b-86ba-da4f-32f9-9345cffddef5",
+		"71ec4759-0864-75f7-b221-2e306a84e892",
+		"05f79d54-b008-1567-b0bb-4ba1b6528a67",
+		"bf67c2d2-eeeb-23de-60fd-99a622e596b5",
+		"882526da-c8ae-abc8-411b-d44fd3fed595",
+		"aaafeabc-46ca-c6bc-0246-cd01db53c68b",
+		"bb4e8a0f-3bc9-cca8-fdd8-91d4a0c0651f",
+		"dfb8ed34-f105-86a5-581a-3a1097ff3191",
+		"fbdca452-ca4f-e267-035d-2869dc0e49a6"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1616140607840,
+	"owner": "13682127",
+	"public": false,
+	"requests": [
+		{
+			"id": "05f79d54-b008-1567-b0bb-4ba1b6528a67",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/books/checkisbn/3445",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619169710222,
+			"name": "/api/checkisbn/{isbn} | checkISBN",
+			"description": "",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": []
+		},
+		{
+			"id": "71ec4759-0864-75f7-b221-2e306a84e892",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/book/357788888",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1616142554655,
+			"name": "/api/book/{isbn} | findByIsbn",
+			"description": "",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": []
+		},
+		{
+			"id": "882526da-c8ae-abc8-411b-d44fd3fed595",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYm9va3N0b3JlMjEuczE4MTA0NTYwMzEuc3R1ZGVudC5rd21oZ2IuYXRcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTkxNjg5ODYsImV4cCI6MTYxOTE3MjU4NiwibmJmIjoxNjE5MTY4OTg2LCJqdGkiOiJTRHlUSjJpM0JkZThBRFF4Iiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlciI6eyJpZCI6MX19.NOvTEEM7rY7DK_XMpJj6dox_uN_9fDY1TBRCgQaeqSU\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYm9va3N0b3JlMjEuczE4MTA0NTYwMzEuc3R1ZGVudC5rd21oZ2IuYXRcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTkxNjg5ODYsImV4cCI6MTYxOTE3MjU4NiwibmJmIjoxNjE5MTY4OTg2LCJqdGkiOiJTRHlUSjJpM0JkZThBRFF4Iiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlciI6eyJpZCI6MX19.NOvTEEM7rY7DK_XMpJj6dox_uN_9fDY1TBRCgQaeqSU",
+					"description": ""
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/book",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619169706647,
+			"name": "/api/book | save book",
+			"description": "",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": [],
+			"rawModeData": "{\n    \"isbn\": \"342345\",\n    \"title\": \"Herr der Ringe5\",\n    \"subtitle\": \"asfgg\",\n    \"published\": \"2021-03-12\",\n    \"rating\": 10,\n    \"user_id\": 1,\n    \"description\": \"Fhghgh\",\n    \"authors\": [\n        {\n            \"firstName\": \"Charlie\",\n            \"lastName\": \"Chip\"\n        },\n        {\n            \"firstName\": \"Gerda\",\n            \"lastName\": \"Wurm\"\n        },\n        {\n            \"firstName\": \"Franz\",\n            \"lastName\": \"Mayer\"\n        }\n    ],\n    \"images\": [\n        {\n            \"url\": \"https://images.unsplash.com/photo-1535666669445-e8c15cd2e7d9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bG9yZCUyMG9mJTIwcmluZ3N8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60\",\n            \"title\": \"Bild 1\"\n        },\n        {\n            \"url\": \"https://images.unsplash.com/photo-1577453193951-ae7a761e70eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80\",\n            \"title\": \"Bild 2\"\n        }\n    ]\n}"
+		},
+		{
+			"id": "aaafeabc-46ca-c6bc-0246-cd01db53c68b",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/book/66666",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1616148205807,
+			"name": "/api/book/{isbn} | update book",
+			"description": "",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": [],
+			"rawModeData": "{\n    \"isbn\": \"66666\",\n    \"title\": \"Herr der Ringe UPDATED\",\n    \"subtitle\": \"asfgg\",\n    \"published\": \"2021-03-12\",\n    \"rating\": 10,\n    \"user_id\": 1,\n    \"description\": \"Fhghgh\",\n    \"authors\": [\n        {\n        \t\"id\": 1,\n            \"firstName\": \"Charlie\",\n            \"lastName\": \"Chip\"\n        }\n    ],\n    \"images\": [\n        {\n            \"url\": \"https://images.unsplash.com/photo-1535666669445-e8c15cd2e7d9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bG9yZCUyMG9mJTIwcmluZ3N8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60\",\n            \"title\": \"Bild 1 Update\"\n        },\n        {\n            \"url\": \"https://images.unsplash.com/photo-1577453193951-ae7a761e70eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80\",\n            \"title\": \"Bild 2 Update\"\n        }\n    ]\n}"
+		},
+		{
+			"id": "bb4e8a0f-3bc9-cca8-fdd8-91d4a0c0651f",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/book/12345",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1617960567001,
+			"name": "/api/book/{isbn} | delete book",
+			"description": "",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "bf67c2d2-eeeb-23de-60fd-99a622e596b5",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/books/search/Ringe",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1616148801344,
+			"name": "/api/search/{searchTerm} | findBySearchTerm",
+			"description": "",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": []
+		},
+		{
+			"id": "ce6ab90b-86ba-da4f-32f9-9345cffddef5",
+			"headers": "Content-Type: application/json\nAccept: application/json\nAuthorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYm9va3N0b3JlMjEuczE4MTA0NTYwMzEuc3R1ZGVudC5rd21oZ2IuYXRcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTkxNjg5ODYsImV4cCI6MTYxOTE3MjU4NiwibmJmIjoxNjE5MTY4OTg2LCJqdGkiOiJTRHlUSjJpM0JkZThBRFF4Iiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlciI6eyJpZCI6MX19.NOvTEEM7rY7DK_XMpJj6dox_uN_9fDY1TBRCgQaeqSU\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYm9va3N0b3JlMjEuczE4MTA0NTYwMzEuc3R1ZGVudC5rd21oZ2IuYXRcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTkxNjg5ODYsImV4cCI6MTYxOTE3MjU4NiwibmJmIjoxNjE5MTY4OTg2LCJqdGkiOiJTRHlUSjJpM0JkZThBRFF4Iiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlciI6eyJpZCI6MX19.NOvTEEM7rY7DK_XMpJj6dox_uN_9fDY1TBRCgQaeqSU",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/books",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619169468983,
+			"name": "/api/books | findAllBooks",
+			"description": "https://bookstore21.s1810456031.student.kwmhgb.at/api/books",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": []
+		},
+		{
+			"id": "dfb8ed34-f105-86a5-581a-3a1097ff3191",
+			"headers": "Content-Type: application/json\nAccept: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				},
+				{
+					"key": "Accept",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/auth/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1619169701838,
+			"name": "/api/auth/login | Login",
+			"description": "",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"secret\"\n}"
+		},
+		{
+			"id": "fbdca452-ca4f-e267-035d-2869dc0e49a6",
+			"headers": "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYm9va3N0b3JlMjEuczE4MTA0NTYwMzEuc3R1ZGVudC5rd21oZ2IuYXRcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTkxNjk2MjksImV4cCI6MTYxOTE3MzIyOSwibmJmIjoxNjE5MTY5NjI5LCJqdGkiOiJWa0xRTVJiNm50Q2JYd0RqIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlciI6eyJpZCI6MX19.oVCmDOaxgVMeN7epiHS2XyfDdZLEPNQUGn_EMorYQV0\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYm9va3N0b3JlMjEuczE4MTA0NTYwMzEuc3R1ZGVudC5rd21oZ2IuYXRcL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MTkxNjk2MjksImV4cCI6MTYxOTE3MzIyOSwibmJmIjoxNjE5MTY5NjI5LCJqdGkiOiJWa0xRTVJiNm50Q2JYd0RqIiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3IiwidXNlciI6eyJpZCI6MX19.oVCmDOaxgVMeN7epiHS2XyfDdZLEPNQUGn_EMorYQV0",
+					"description": ""
+				}
+			],
+			"url": "https://bookstore21.s1810456031.student.kwmhgb.at/api/auth/logout",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "eba5977a-ea3a-c2aa-c8fe-3d6064805771",
+			"data": null,
+			"dataMode": "params",
+			"name": "/api/auth/logout | Logout",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1619169684514,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
