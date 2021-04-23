@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BookFormComponent } from './book-form/book-form.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './shared/auth.service';
 
 @NgModule({
   declarations: [ 
@@ -20,7 +22,7 @@ import { BookFormComponent } from './book-form/book-form.component';
     BookListComponent, 
     BookListItemComponent, 
     BookDetailsComponent, 
-    HomeComponent, BookFormComponent 
+    HomeComponent, BookFormComponent, LoginComponent 
   ],
   imports: [ 
     BrowserModule, 
@@ -32,6 +34,7 @@ import { BookFormComponent } from './book-form/book-form.component';
   bootstrap: [ AppComponent ],
   providers: [ 
     BookStoreService,  
+    AuthService
   ]
 })
 export class AppModule { }
