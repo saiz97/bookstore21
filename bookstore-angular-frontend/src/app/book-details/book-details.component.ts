@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../shared/auth.service';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -18,7 +19,8 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private bookstoreService: BookStoreService
+    private bookstoreService: BookStoreService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
